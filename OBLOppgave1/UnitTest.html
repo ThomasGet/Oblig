@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<title>Test Suite</title>
+<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.15.0.css" />
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+  <script src="https://code.jquery.com/qunit/qunit-2.15.0.js"></script>
+  <script type="text/javascript" src="Controller.js"></script>
+  <script>
+    function add(a, b) {
+      return a + b;
+    }
+    
+    let randomnum =5
+    let callback =""
+
+    QUnit.test("", function (assert) {
+      guessnumber(5)
+      let actual = callback;
+      let expected = "Riktig" || "For lavt" || "For høyt";
+
+      assert.equal(actual, expected, `${callback}`);
+    });
+
+    function Show() {}
+
+    QUnit.test("", function (assert) {
+        let guess =5
+        
+      guesscheck(5);
+      let actual = guesscheck(5);
+      let expected = "Riktig" && "green";
+
+      assert.equal(
+        actual,
+        expected,
+        "This was expected to succed"
+      );
+    });
+
+
+    QUnit.test("", function (assert) {
+        let guess =5
+        
+      guesscheck(5);
+      let actual = guesscheck(3);
+      let expected = "For lavt" && "red";
+
+      assert.equal(
+        actual,
+        expected,
+        "This test was expected to fail"
+      );
+    });
+
+   
+  </script>
+</body>
